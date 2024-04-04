@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Form Example</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <h1>Lineal Search</h1>
+        <form action="/linealsearch">
+            <label for="listanumeros1">Lista numeros:</label><br>
+            <input type="text" id="listanumeros1" name="listanumeros1"><br><br>
+            <label for="num1">Numero:</label><br>
+            <input type="text" id="num1" name="num1"><br><br>
+
+            <input type="button" value="Submit" onclick="linealsearch()">
+        </form> 
+        <div id="getlinealsearch"></div>
+
+        <script>
+            function linealsearch() {
+                let listanumeros1 = document.getElementById("listanumeros1").value;
+                let Numero = document.getElementById("num1").value;
+                console.log(listanumeros1);
+                console.log(Numero);
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("getlinealsearch").innerHTML =
+                    this.responseText;
+                }
+                xhttp.open("GET", "/linealsearch?value="+ Numero + "&list=" + listanumeros1); 
+                xhttp.send();
+            }
+        </script>
+
+        <h1>Binary Search</h1>
+        <form action="/binarysearch">
+            <label for="listanumeros2">Lista numeros:</label><br>
+            <input type="text" id="listanumeros2" name="listanumeros2"><br><br>
+            <label for="num2">Numero:</label><br>
+            <input type="text" id="num2" name="num2"><br><br>
+
+            <input type="button" value="Submit" onclick="binarysearch()">
+        </form>     
+        
+        <div id="getbinarysearch"></div>
+        
+
+        <script>
+            function binarysearch() {
+                let listanumeros1 = document.getElementById("listanumeros2").value;
+                let Numero = document.getElementById("num2").value;
+                console.log(listanumeros1);
+                console.log(Numero);
+                const xhttp = new XMLHttpRequest();
+                xhttp.onload = function() {
+                    document.getElementById("getbinarysearch").innerHTML =
+                    this.responseText;
+                }
+                xhttp.open("GET", "/binarysearch?value="+ Numero + "&list=" + listanumeros1); 
+                xhttp.send();
+            }
+        </script>
+
+    </body>
+</html>
