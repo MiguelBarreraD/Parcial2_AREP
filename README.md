@@ -1,8 +1,19 @@
 # Parcial2_AREP
 
 
+## Instrucciones de uso 
 
-# Arquitectura
 
 
+
+
+## Diseño
+
+
+
+
+## Construcción
+
+
+## Maquinas Virtuales
 

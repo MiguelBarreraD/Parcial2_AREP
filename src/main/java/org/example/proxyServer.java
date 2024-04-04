@@ -4,6 +4,8 @@ import static spark.Spark.*;
 
 public class proxyServer {
 
+
+
     static int COUNT = 1;
     static String URL1 = "ec2-50-17-68-224.compute-1.amazonaws.com:4567/";
     static String URL2 = "ec2-3-89-228-197.compute-1.amazonaws.com:4567/";
@@ -12,7 +14,7 @@ public class proxyServer {
     public static void main(String... args) {
         port(getPort());
 
-
+        staticFiles.location("/public");
         get("linealsearch", (req, res) -> {
             
             String listNumbersParam = req.queryParams("list");
