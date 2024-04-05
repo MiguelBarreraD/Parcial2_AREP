@@ -7,8 +7,6 @@ import java.util.Arrays;
 public class MathServices {
 
     public static void main(String... args) {
-
-        staticFiles.location("/public");
         port(getPort());
 
         get("linealsearch", (req, res) -> {

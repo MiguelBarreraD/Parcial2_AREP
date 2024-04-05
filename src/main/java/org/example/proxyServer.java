@@ -1,57 +1,51 @@
 package org.example;
+
 import static spark.Spark.*;
 
+import java.io.IOException;
 
-public class proxyServer {
+public class ProxyServer {
+    private static final String MATH_SERVICE_1_URL = "http://ec2-54-90-213-111.compute-1.amazonaws.com:4567";
+    private static final String MATH_SERVICE_2_URL = "http://ec2-34-201-152-210.compute-1.amazonaws.com:4567";
 
+    private static int currentServiceIndex = 0;
 
-
-    static int COUNT = 1;
-    static String URL1 = "ec2-50-17-68-224.compute-1.amazonaws.com:4567/";
-    static String URL2 = "ec2-3-89-228-197.compute-1.amazonaws.com:4567/";
-    static String lineal = "linealsearch";
-    static String binary = "linealsearch";
-    public static void main(String... args) {
+    public static void main(String[] args) {
         port(getPort());
-
         staticFiles.location("/public");
+
         get("linealsearch", (req, res) -> {
-            
             String listNumbersParam = req.queryParams("list");
-            String numero = req.queryParams("value");
-
-            String respoString = "";
-            if  (COUNT % 2 == 0) { 
-                respoString = HttpConnectionExample.main(URL1+lineal+"value=" + numero + "&list=" + listNumbersParam);
-            }  else {
-                respoString = HttpConnectionExample.main(URL2+lineal+"value=" + numero + "&list=" + listNumbersParam);
-            }
-            COUNT += 1;
-            return respoString;
+            String num = req.queryParams("value");
+            return delegateToMathService("linealsearch", listNumbersParam, num);
         });
-
 
         get("binarysearch", (req, res) -> {
             String listNumbersParam = req.queryParams("list");
-            String numero = req.queryParams("value");
-            String respoString = "";
-            if  (COUNT % 2 == 0) { 
-                respoString = HttpConnectionExample.main(URL1+binary+"value=" + numero + "&list=" + listNumbersParam);
-                COUNT += 1;
-            }  else {
-                respoString = HttpConnectionExample.main(URL1+binary+"value=" + numero + "&list=" + listNumbersParam);
-            }
-            COUNT += 1;
-            return respoString;
+            String num = req.queryParams("value");
+            return delegateToMathService("binarysearch", listNumbersParam, num);
         });
-
     }
-    
+
+    private static String delegateToMathService(String operation, String listNumbersParam, String num) throws IOException {
+        String mathServiceUrl;
+        if (currentServiceIndex == 0) {
+            mathServiceUrl = MATH_SERVICE_1_URL;
+        } else {
+            mathServiceUrl = MATH_SERVICE_2_URL;
+        }
+
+            currentServiceIndex = (currentServiceIndex + 1) % 2;
+
+        String url = mathServiceUrl + "/" + operation + "?list=" + listNumbersParam + "&value=" + num;
+        String response = HttpConnectionExample.main(url);
+        return response;
+    }
 
     private static int getPort() {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 4567;
+        return 8080;
     }
 }
