@@ -20,7 +20,7 @@ La arquitectura de este sistema que consta de un servicio de cálculo de funcion
 ## Instrucciones de uso
 
 > [!IMPORTANT]
-> El poryecto esta creado para funcionar con la aquitectura de AWS descirta anteriormente
+> El proyecto está creado para funcionar con la arquitectura de AWS descrita anteriormente.
 
 Clonamos el repositorio del proyecto:
 
