@@ -3,6 +3,11 @@
 ## Demostración funcionamiento
 
 
+
+https://github.com/MiguelBarreraD/Parcial2_AREP/assets/80360472/5de04878-2694-4a24-846e-e61d5be5b05e
+
+
+
 ## Arquitectura
 
 La arquitectura de este sistema que consta de un servicio de cálculo de funciones de ordenamiento (Math Services) desplegado en múltiples instancias de EC2, y un servidor proxy que recibe las solicitudes de los clientes y las distribuye a las instancias de Math Services utilizando un algoritmo de round-robin. El proxy, también desplegado en una instancia de EC2, permite la configuración de las direcciones y puertos de los servicios de ordenamiento a través de variables de entorno. Los clientes web interactúan con el sistema de manera asíncrona, enviando sus solicitudes al proxy, que se encarga de delegar el procesamiento a las instancias apropiadas de Math Services y devolver los resultados al cliente.
