@@ -3,8 +3,6 @@ package org.example;
 
 public class Calculator {
     
-
-
     public static int LinealSearch(String[] listNumbers, String toFindn){ 
         int position = -1;
         for  (int i=0 ;i < listNumbers.length; i++){

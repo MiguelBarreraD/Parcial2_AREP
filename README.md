@@ -55,13 +55,15 @@ Creamos 3 masquinas virtuales EC2:
 
 Debemos configurar los grupos de seguridad para que nos permita realizar las peticiones a los servidores
 
-Configuración para servidor proxy:
-        Debemos abrir el pueto 8080 y permitir que se ingrese desde cualquier origen
+Configuración para servidor proxy: 
+
+- Debemos abrir el pueto 8080 y permitir que se ingrese desde cualquier origen
 
 ![](img/ProxyConf.png)
 
 Configuración para servidores MathServices:
-        Debemos abrir el pueto 4567 y permitir que se ingrese desde cualquier origen
+        
+- Debemos abrir el pueto 4567 y permitir que se ingrese desde cualquier origen
 
 ![](img/ServiceConf.png)
 
@@ -103,7 +105,9 @@ Ejecutamos los siguientes comandos para instalar Apache Maven:
         El método BinarySearch() realiza una búsqueda binaria en un arreglo de enteros y devuelve la posición del elemento encontrado o -1 si no se encuentra.
         Estos métodos se utilizan en la clase MathServices para implementar las operaciones de búsqueda.
 
+## Test
 
+![](img/test.png)
 
 ## Autor
 

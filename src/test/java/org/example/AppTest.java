@@ -1,8 +1,7 @@
 package org.example;
 
-import junit.framework.Test;
 import junit.framework.TestCase;
-import junit.framework.TestSuite;
+
 
 /**
  * Unit test for simple App.
@@ -10,29 +9,16 @@ import junit.framework.TestSuite;
 public class AppTest 
     extends TestCase
 {
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+    public void testLinealSearch() {
+        String[] listNumbers = {"1", "2", "3", "4", "5"};
+        assertEquals(2, Calculator.LinealSearch(listNumbers, "3"));
+        assertEquals(-1, Calculator.LinealSearch(listNumbers, "6"));
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    
+    public void testBinarySearch() {
+        int[] arr = {1, 3, 5, 7, 9};
+        assertEquals(2, Calculator.BinarySearch(arr, 5));
+        assertEquals(-1, Calculator.BinarySearch(arr, 4));
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
-    }
+    
 }
