@@ -12,10 +12,6 @@ public class proxyServer {
     private static int currentServiceIndex = 0;
 
     public static void main(String[] args) {
-        before((request, response) -> {
-            response.header("Access-Control-Allow-Origin", "*");
-            response.header("Access-Control-Allow-Methods", "GET");
-        });
         port(getPort());
         staticFiles.location("/public");    
 
