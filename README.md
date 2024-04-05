@@ -33,7 +33,6 @@
         Estos métodos se utilizan en la clase MathServices para implementar las operaciones de búsqueda.
 
 
-
 ## Construcción
 
 
