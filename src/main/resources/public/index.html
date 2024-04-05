@@ -80,7 +80,7 @@
                     document.getElementById("getlinealsearch").innerHTML =
                     this.responseText;
                 }
-                xhttp.open("GET", "http://localhost:8080/linealsearch?value="+ Numero + "&list=" + listanumeros1); 
+                xhttp.open("GET", "/linealsearch?value="+ Numero + "&list=" + listanumeros1); 
                 xhttp.send();
             }
         </script>
@@ -109,7 +109,7 @@
                     document.getElementById("getbinarysearch").innerHTML =
                     this.responseText;
                 }
-                xhttp.open("GET", "http://localhost:8080/binarysearch?value="+ Numero + "&list=" + listanumeros1); 
+                xhttp.open("GET", "/binarysearch?value="+ Numero + "&list=" + listanumeros1); 
                 xhttp.send();
             }
         </script>
