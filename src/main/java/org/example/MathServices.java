@@ -4,7 +4,7 @@ import static spark.Spark.*;
 
 import java.util.Arrays;
 
-public class SparkWebServer {
+public class MathServices {
 
     public static void main(String... args) {
 

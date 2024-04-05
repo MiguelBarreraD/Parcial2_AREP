@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import javax.print.DocFlavor.STRING;
+
 
 public class HttpConnectionExample {
 
@@ -21,8 +21,6 @@ public class HttpConnectionExample {
 
         String inputLine;
         StringBuffer response = new StringBuffer();
-        // The following invocation perform the connection implicitly before getting the
-        // code
         int responseCode = con.getResponseCode();
         System.out.println("GET Response Code :: " + responseCode);
 
