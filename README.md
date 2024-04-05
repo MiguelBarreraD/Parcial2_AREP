@@ -20,7 +20,7 @@ La arquitectura de este sistema que consta de un servicio de cálculo de funcion
 ## Instrucciones de uso
 
 > [!IMPORTANT]
-> El proyecto está creado para funcionar con la arquitectura de AWS descrita anteriormente.
+> El proyecto está diseñado para funcionar con la arquitectura de AWS descrita anteriormente. Es importante asegurarse de que esta arquitectura esté implementada y en funcionamiento correctamente para que el proyecto pueda operar según lo previsto.
 
 Clonamos el repositorio del proyecto:
 
@@ -38,12 +38,18 @@ Ejecutamos los servicios:
     
         $ mvn exec:java -Dexec.mainClass=org.example.proxyServer
 
+3. Para ingresar a la aplicación, se debe utilizar la siguiente información:
+
+        - Public IPv4 DNS: ec2-34-229-190-45.compute-1.amazonaws.com/
+        - Puerto: 8080
+        - URL completa: http://ec2-34-229-190-45.compute-1.amazonaws.com:8080/
+
 
 ## Construcción
 
 ### Creación maquinas:
 
-Creamos 3 masquinas virtuales EC2
+Creamos 3 masquinas virtuales EC2:
 
 ![](img/Maquinas.png)
 
