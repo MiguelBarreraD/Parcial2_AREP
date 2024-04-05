@@ -5,8 +5,8 @@ import static spark.Spark.*;
 import java.io.IOException;
 
 public class proxyServer {
-    private static final String MATH_SERVICE_1_URL = "http://ec2-user@ec2-18-209-43-76.compute-1.amazonaws.com:4567";
-    private static final String MATH_SERVICE_2_URL = "http://ec2-user@ec2-54-80-171-222.compute-1.amazonaws.com:4567";
+    private static final String MATH_SERVICE_1_URL = "http://ec2-user@ec2-54-152-112-54.compute-1.amazonaws.com:4567";
+    private static final String MATH_SERVICE_2_URL = "http://ec2-user@ec2-54-161-68-58.compute-1.amazonaws.com:4567";
     
 
     private static int currentServiceIndex = 0;
